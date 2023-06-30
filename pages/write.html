@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0</title>
+  </head>
+  <style>
+    #container {
+      position: relative;
+      max-width: 1280px;
+      margin: 0px auto;
+      text-align: center;
+      min-height: 100vh;
+      background: rgb(212, 211, 211);
+    }
+
+    #whiteBox {
+      position: relative;
+      width: 70%;
+      height: 100vh;
+      top: 50px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0px 0px 4px 1px rgba(100, 100, 100, 0.25);
+      left: 13%;
+    }
+
+    #date {
+      position: relative;
+      font-family: Pretendard;
+      font-weight: 800;
+      font-size: 25px;
+      text-align: center;
+
+      top: 3%;
+
+      color: #4c7343;
+    }
+
+    #line {
+      position: relative;
+      top: 5%;
+    }
+
+    #text {
+      position: relative;
+      font-family: Pretendard;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+      text-align: center;
+
+      width: 400px;
+      top: 10%;
+    }
+
+    #rec {
+      position: relative;
+
+      border-radius: 10px;
+      top: 250px;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="whiteBox">
+        <div id="date">
+          <span id="year"></span>년 <span id="month"></span>월
+          <span id="day"></span>일 <span id="dayOfWeek"></span>요일
+        </div>
+        <div id="line">
+          <img src="../images/Line 1.png" style="width: 50%" ; />
+        </div>
+        <div id="img">
+          <img src="../images/Rectangle 21.png" style="position:relative; width:50%; top: 50px;"/>
+        </div>
+        <input type="text" id="text" placeholder="오늘 무슨 일이 있었냐면 ..."/>
+      </div>
+      <div id="rec">
+        <img src="../images/Rectangle 8.png" style="width: 100%" ; />
+        <img
+          src="../images/circle.png"
+          style="
+            position: relative;
+            width: 12%;
+            bottom: 530px;
+            margin-left: 50px;
+            left: 130px;
+            margin-right: 80px;
+          "
+        />
+        <img
+          id="btn"
+          src="../images/save.png"
+          style="position: relative; width: 7%;
+          bottom: 580px;
+          right: 75px;"
+        />
+        <img
+          src="../images/pic.png"
+          style="position: relative; width: 9%;
+          bottom: 190px;
+          right: 58%;"
+        />
+      </div>
+      </div>
+    </div>
+    <script src="../js/write.js"></script>
+  </body>
+</html>
