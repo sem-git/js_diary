@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>0</title>
+    <title>check</title>
   </head>
   <style>
     #container {
@@ -19,7 +19,7 @@
     #whiteBox {
       position: relative;
       width: 80%;
-      height: 100vh;
+      height: 90vh;
       top: 50px;
       background: #ffffff;
       border-radius: 20px;
@@ -44,16 +44,15 @@
       top: 5%;
     }
 
-    #text {
+    #memoText {
       position: relative;
       font-family: Pretendard;
       font-size: 20px;
       font-weight: 500;
       line-height: 24px;
       text-shadow: 1px 1px 3px gray;
-      width: 300px;
-      top: 7%;
-      left: 25%;
+      height: 500px;
+      top: 10%;
     }
 
     #rec {
@@ -74,7 +73,7 @@
       right: 400px;
     }
 
-    #wrapper {
+    .wrapper {
       position: relative;
       width: 80%;
       height: 20vh;
@@ -86,7 +85,7 @@
       margin-top: 50px;
     }
 
-    #name {
+    .name {
       color: #4c7343;
       font-size: 25px;
       font-weight: bold;
@@ -95,7 +94,7 @@
       left: -270px;
     }
 
-    #content {
+    .content {
       color: black;
       font-size: 20px;
       left: -220px;
@@ -105,6 +104,24 @@
   </style>
   <body>
     <div id="container">
+      <img
+        src="../images/delete.png"
+        id="deleteBtn"
+        style="position: relative; width: 80px; margin-left: -700px; top: 45px"
+        onclick="deleteDiary()"
+      />
+      <img
+        src="../images/edit.png"
+        id="editBtn"
+        style="position: relative; top: 45px"
+        onclick="editDiary()"
+      />
+      <img
+        src="../images/editword.png"
+        id="editword"
+        style="position: relative; top: 30px; left: -100px"
+        onclick="editDiary()"
+      />
       <div id="whiteBox">
         <div id="date">
           <span id="year"></span>년 <span id="month"></span>월
@@ -113,9 +130,9 @@
         <div id="line">
           <img src="../images/Line 1.png" style="width: 50%" ; />
         </div>
-        <div id="text">오늘 무슨 일이 있었냐면 ...</div>
+        <div id="memoText"></div>
       </div>
-      <div id="commentN">댓글(2)</div>
+      <div id="commentN">댓글(<span id="commentCount"></span>)</div>
       <div id="wrapper">
         <input
           type="text"
@@ -124,38 +141,21 @@
           placeholder="댓글을 입력해주세요"
           style="
             position: relative;
-            right: 10%;
-            top: 8%;
-            width: 60%;
-            height: 60%;
+            top: 80px;
+            width: 80%;
+            height: 18vh;
+            border-radius: 20px;
+            left: 28px;
+            border-style: none;
           "
         />
         <img
           src="../images/Send Button.png"
-          style="position: relative; top: 50%; left: 14%"
-          id="btn2"
+          style="position: relative; top: 120px; left: -50px"
+          onclick="addComment()"
         />
       </div>
-      <div id="wrapper">
-        <div id="comment">
-          <img
-            src="../images/Ellipse 3.png"
-            style="width: 8%; margin-top: 25px; margin-right: 780px"
-          />
-          <div id="name">미영</div>
-          <div id="content">왜 글을 쓰다마세요..</div>
-        </div>
-      </div>
-      <div id="wrapper">
-        <div id="comment">
-          <img
-            src="../images/Ellipse 3.png"
-            style="width: 8%; margin-top: 25px; margin-right: 780px"
-          />
-          <div id="name">미영</div>
-          <div id="content">더 써주세요...</div>
-        </div>
-      </div>
+
       <div id="rec">
         <img src="../images/Rectangle 8.png" style="width: 100%" ; />
         <img
@@ -178,11 +178,13 @@
             left: 220px;
             margin-right: 80px;
           "
+          onclick="writebtn()"
         />
         <img
           id="btn"
           src="../images/book.png"
           style="position: relative; width: 10%; bottom: 540px; right: 5px"
+          onclick="writebtn()"
         />
         <img
           src="../images/graph.png"
